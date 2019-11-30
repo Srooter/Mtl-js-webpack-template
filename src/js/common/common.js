@@ -1,3 +1,3 @@
 export default function printMe() {
-  console.log('%c ======================== Author: Sroot =========================','color: #658cd1')
+  console.log('%c ================ This is a js webpack template.=================','color: #658cd1')
 }

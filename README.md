@@ -6,7 +6,7 @@ Mtl-js-webpack-template
 
 ## Features
 
-1.Very esay to use html+js+css build front-end Multi page app.
+1.Very esay to use html+js+css build front-end Multi pages app.
 
 2.Integrate commonly webpack loaders and plugins.
 
@@ -43,9 +43,26 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 
 1.`git clone git@github.com:ruanyf/react-demos.git` or download zip.
 
-2.`npm run start`
+2.`npm install`
 
-## Command
+3.`npm run start`
+
+## Config 
+
+`.env` file 
+
+### `JS_CSS_VERSION`
+
+- Option: `param` | `file`
+- Default: `param`
+
+### `OUTPUT_PUBLIC_PATH`
+
+- Type: `String`
+- Default: ``
+- Example：`http://www.xxx.com`                      
+
+## Command 
 
 - `npm run clean`: Clean npm cache.
 

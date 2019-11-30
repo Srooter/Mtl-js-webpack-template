@@ -7,8 +7,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 require('dotenv').config()
 module.exports = merge(common, {
   mode: 'production',
+  // 生产环境如果需要源码映射就设置'source-map'。
   devtool: 'none',
-  // devtool: 'source-map',
   plugins: [
     // 参考：https://github.com/johnagan/clean-webpack-plugin/
     // Reference：https://github.com/johnagan/clean-webpack-plugin/

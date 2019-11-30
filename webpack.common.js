@@ -23,7 +23,7 @@ module.exports = {
   // Reference：https://webpack.js.org/configuration/entry-context/
   entry: {
     common: './src/js/common/common.js',
-    index: './src/js/page/index.js',
+    index: './src/js/pages/index.js',
   },
   // 参考：https://webpack.js.org/configuration/output/
   // Reference：https://webpack.js.org/configuration/output/
@@ -105,19 +105,22 @@ module.exports = {
     // 参考：https://webpack.js.org/plugins/stylelint-webpack-plugin/
     // Reference：https://webpack.js.org/plugins/stylelint-webpack-plugin/
     new StyleLintPlugin({
-      files: 'src/css/*.css',
+      files: ['src/css/pages/*.css','src/css/common/*.css'],
     }),
     // 参考：https://github.com/FullHuman/purgecss-webpack-plugin/
     // Reference：https://github.com/FullHuman/purgecss-webpack-plugin/
     new PurgecssPlugin({
       paths: glob.sync(path.join(__dirname, 'src') + '/**/*', { nodir: true }),
-      purifyOptions: { info: true, minify: false }
+      purifyOptions: { 
+        info: true, 
+        minify: false 
+      }
     }),
     // 参考：https://webpack.js.org/plugins/mini-css-extract-plugin/
     // Reference：https://webpack.js.org/plugins/mini-css-extract-plugin/
     new MiniCssExtractPlugin({
-      filename: NODE_ENV ? 'css/[name].css' : JS_CSS_VERSION ? 'css/[name].[hash].css' : 'css/[name].css?v=[hash]',
-      chunkFilename: NODE_ENV ? 'css/[id].css' : 'css/[id].[hash].css',
+      filename: JS_CSS_VERSION ? 'css/[name].[hash].css' : 'css/[name].css?v=[hash]',
+      chunkFilename: JS_CSS_VERSION ? 'css/[id].[hash].css' : 'css/[id].css?v=[hash]',
     }),
     // 参考：https://webpack.js.org/plugins/copy-webpack-plugin/
     // Reference：https://webpack.js.org/plugins/copy-webpack-plugin/
@@ -187,6 +190,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              sourceMap: NODE_ENV,
               importLoaders: 1,
             },
           },
