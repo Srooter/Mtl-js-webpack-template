@@ -1,0 +1,22 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "document": true,
+    "console": true
+  },
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "rules": {
+    "max-len": ["error", { "code": 120 }],
+    "indent": ["error", 2,{ "SwitchCase": 1 }],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"]
+  }
+}
