@@ -1,6 +1,6 @@
 Mtl-js-webpack-template
 
-> A simple js webpack template，build a front-end js app with webpack.
+A simple js webpack template，build a front-end js app with webpack.
 
 ![GitHub](https://img.shields.io/github/license/Srooter/Mtl-js-webpack-template)
 
@@ -34,7 +34,6 @@ Mtl-js-webpack-template
   - `optimize-css-assets-webpack-plugin`
   - `webpack-bundle-analyzer`
     
-
 ## Environment Support
 
 Modern browser,like Chrome,Firefox,Edge last 2 versions.
@@ -71,6 +70,12 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 - `npm run build`: Publish application.
 
 - `npm run serve`: Test release application for Local http server.
+
+- `npm run uncss`: check css files unused styles and print to console.
+
+> `npm run uncss` effect check src dir css files unused styles.
+
+> `purgecss-webpack-plugin` effect clean src (include vendor) dir css files unused styles.
 
 ## Reference
 

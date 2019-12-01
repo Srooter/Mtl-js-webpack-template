@@ -1,6 +1,6 @@
 {
   "name": "Mtl-js-webpack-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a js webpack template.",
   "private": true,
   "dependencies": {
@@ -32,6 +32,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "purgecss": "^1.4.1",
     "purgecss-webpack-plugin": "^1.6.0",
     "purify-css": "^1.2.5",
     "style-loader": "^1.0.0",
@@ -47,7 +48,8 @@
     "clean": "npm cache clean --force",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --color --progress --config webpack.dev.js ",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "serve": "serve ./dist"
+    "serve": "serve ./dist",
+    "uncss": "node purgecss.api.js"
   },
   "browserslist": [
     ">1%",

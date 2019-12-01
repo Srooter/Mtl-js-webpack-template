@@ -18,6 +18,7 @@ const OUTPUT_PUBLIC_PATH = process.env.OUTPUT_PUBLIC_PATH
 const distPath = path.resolve(__dirname, 'dist')
 // 读取动态读取views目录中html文件。
 const pages = fs.readdirSync(path.resolve(__dirname, 'src/views')).filter(fileName => fileName.endsWith('.html'))
+
 module.exports = {
   // 参考：https://webpack.js.org/configuration/entry-context/
   // Reference：https://webpack.js.org/configuration/entry-context/

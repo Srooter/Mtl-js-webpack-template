@@ -4,11 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-require('dotenv').config()
+
 module.exports = merge(common, {
   mode: 'production',
-  // 生产环境如果需要源码映射就设置'source-map'。
-  devtool: 'none',
+  // 生产环境如果需要源码映射就设置'nosources-source-map'。
+  devtool: 'nosources-source-map',
   plugins: [
     // 参考：https://github.com/johnagan/clean-webpack-plugin/
     // Reference：https://github.com/johnagan/clean-webpack-plugin/
