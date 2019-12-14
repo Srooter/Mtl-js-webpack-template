@@ -5,6 +5,8 @@ const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
   mode: 'development',
+  // 参考：https://webpack.js.org/configuration/devtool/
+  // Reference：https://webpack.js.org/configuration/devtool/
   devtool: 'inline-source-map',
   // 参考：https://webpack.js.org/configuration/dev-server/
   // Reference：https://webpack.js.org/configuration/dev-server/

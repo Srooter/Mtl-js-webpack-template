@@ -7,7 +7,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = merge(common, {
   mode: 'production',
-  // 生产环境如果需要源码映射就设置'nosources-source-map'。
+  // 参考：https://webpack.js.org/configuration/devtool/
+  // Reference：https://webpack.js.org/configuration/devtool/
   devtool: 'nosources-source-map',
   plugins: [
     // 参考：https://github.com/johnagan/clean-webpack-plugin/
