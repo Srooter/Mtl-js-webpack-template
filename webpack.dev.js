@@ -30,6 +30,6 @@ module.exports = merge(common, {
   plugins: [
     // 参考：https://webpack.js.org/plugins/hot-module-replacement-plugin/
     // Reference：https://webpack.js.org/plugins/hot-module-replacement-plugin/
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
 })

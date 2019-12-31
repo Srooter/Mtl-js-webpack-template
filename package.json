@@ -1,15 +1,19 @@
 {
   "name": "Mtl-js-webpack-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a js webpack template.",
   "private": true,
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "dotenv": "^8.2.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
     "extract-loader": "^3.1.0",
     "glob": "^7.1.6",
     "postcss-preset-env": "^6.7.0",
     "serve": "^11.2.0",
+    "stylelint-config-prettier": "^8.0.0",
+    "stylelint-prettier": "^1.1.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
@@ -17,7 +21,11 @@
     "@babel/core": "^7.7.4",
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "cache-loader": "^4.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.5",
     "cross-env": "^6.0.3",
@@ -28,15 +36,19 @@
     "file-loader": "^4.3.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "prettier": "^1.19.1",
     "purgecss": "^1.4.1",
     "purgecss-webpack-plugin": "^1.6.0",
     "purify-css": "^1.2.5",
+    "regenerator-runtime": "^0.13.3",
     "style-loader": "^1.0.0",
-    "stylelint": "^12.0.0",
+    "stylelint": "^12.0.1",
+    "stylelint-order": "^3.1.1",
     "stylelint-webpack-plugin": "^1.1.0",
     "terser-webpack-plugin": "^2.2.1",
     "url-loader": "^2.3.0",
@@ -49,7 +61,12 @@
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --color --progress --config webpack.dev.js ",
     "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
     "serve": "serve ./dist",
-    "uncss": "node purgecss.api.js"
+    "uncss": "node purgecss.api.js",
+    "test": "jest",
+    "prettier-html": "prettier --write src/**/*.html",
+    "prettier-css": "prettier --write src/**/*.css && stylelint src/**/*.css --fix",
+    "prettier-js": "prettier --write src/**/*.js && eslint src/**/*.js --fix",
+    "prettier-all": "npm run prettier-html && npm run prettier-css && npm run prettier-js"
   },
   "browserslist": [
     ">1%",
@@ -58,5 +75,5 @@
     "not ie < 8"
   ],
   "author": "Sroot",
-  "license": "ISC"
+  "license": "MIT"
 }

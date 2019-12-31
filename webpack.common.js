@@ -106,16 +106,16 @@ module.exports = {
     // 参考：https://webpack.js.org/plugins/stylelint-webpack-plugin/
     // Reference：https://webpack.js.org/plugins/stylelint-webpack-plugin/
     new StyleLintPlugin({
-      files: ['src/css/pages/*.css','src/css/common/*.css'],
+      files: ['src/css/pages/*.css', 'src/css/common/*.css'],
     }),
     // 参考：https://github.com/FullHuman/purgecss-webpack-plugin/
     // Reference：https://github.com/FullHuman/purgecss-webpack-plugin/
     new PurgecssPlugin({
       paths: glob.sync(path.join(__dirname, 'src') + '/**/*', { nodir: true }),
-      purifyOptions: { 
-        info: true, 
-        minify: false 
-      }
+      purifyOptions: {
+        info: true,
+        minify: false,
+      },
     }),
     // 参考：https://webpack.js.org/plugins/mini-css-extract-plugin/
     // Reference：https://webpack.js.org/plugins/mini-css-extract-plugin/
@@ -171,6 +171,7 @@ module.exports = {
         use: [
           // 参考：https://webpack.js.org/loaders/babel-loader/
           // Reference：https://webpack.js.org/loaders/babel-loader/
+          'cache-loader',
           {
             loader: 'babel-loader',
             options: {
@@ -206,9 +207,7 @@ module.exports = {
                   require('postcss-import')({ root: loader.resourcePath }),
                   require('postcss-preset-env')(),
                 ]
-                if (NODE_ENV) {
-                  postcssPgn.push(require('cssnano')())
-                }
+                NODE_ENV && postcssPgn.push(require('cssnano')())
                 return postcssPgn
               },
             },

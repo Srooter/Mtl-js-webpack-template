@@ -10,13 +10,26 @@ module.exports = merge(common, {
   // 参考：https://webpack.js.org/configuration/devtool/
   // Reference：https://webpack.js.org/configuration/devtool/
   devtool: 'nosources-source-map',
+  optimization: {
+    minimizer: [
+      // 参考：https://webpack.js.org/plugins/terser-webpack-plugin/
+      // Reference：https://webpack.js.org/plugins/terser-webpack-plugin/
+      new TerserJSPlugin({
+        cache: true,
+        parallel: true,
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
+  },
   plugins: [
     // 参考：https://github.com/johnagan/clean-webpack-plugin/
     // Reference：https://github.com/johnagan/clean-webpack-plugin/
     new CleanWebpackPlugin(),
-    // 参考：https://webpack.js.org/plugins/terser-webpack-plugin/
-    // Reference：https://webpack.js.org/plugins/terser-webpack-plugin/
-    new TerserJSPlugin(),
     // 参考：https://github.com/NMFR/optimize-css-assets-webpack-plugin/
     // Reference：https://github.com/NMFR/optimize-css-assets-webpack-plugin/
     new OptimizeCSSAssetsPlugin(),

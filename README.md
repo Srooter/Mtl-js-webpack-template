@@ -22,6 +22,7 @@ A simple js webpack template，build a front-end js app with webpack.
     - `postcss-preset-env`
     - `cssnano`
   - `url-loader`
+  - `cache-loader`
 
 - Plugins:
   - `html-webpack-plugin`
@@ -71,7 +72,17 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 
 - `npm run serve`: Test release application for Local http server.
 
-- `npm run uncss`: check css files unused styles and print to console.
+- `npm run uncss`: Check css files unused styles and print to console.
+
+- `npm run test`: Run unit test.
+
+- `npm run prettier-html`: Formatter all html files.
+
+- `npm run prettier-css`: Formatter all css files.
+
+- `npm run prettier-js`: Formatter all js files.
+
+- `npm run prettier-all`: Formatter all html,css,js files.
 
 > `npm run uncss` effect check src dir css files unused styles.
 
@@ -80,7 +91,6 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 ## Reference
 
 - [webpack](https://webpack.js.org/).
-- from my working other projects.
 
 ## License
 
