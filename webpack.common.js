@@ -169,9 +169,24 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: [
+          // 参考：https://webpack.js.org/loaders/cache-loader/
+          // Reference：https://webpack.js.org/loaders/cache-loader/
+          'cache-loader',
+          // 参考：https://webpack.js.org/loaders/thread-loader/
+          // Reference：https://webpack.js.org/loaders/thread-loader/
+          {
+            loader: 'thread-loader',
+            options: {
+              workers: 2,
+              workerParallelJobs: 50,
+              poolRespawn: false,
+              poolTimeout: 2000,
+              poolParallelJobs: 50,
+              name: 'js-pool',
+            },
+          },
           // 参考：https://webpack.js.org/loaders/babel-loader/
           // Reference：https://webpack.js.org/loaders/babel-loader/
-          'cache-loader',
           {
             loader: 'babel-loader',
             options: {
