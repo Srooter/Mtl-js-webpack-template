@@ -23,8 +23,8 @@ module.exports = {
   // 参考：https://webpack.js.org/configuration/entry-context/
   // Reference：https://webpack.js.org/configuration/entry-context/
   entry: {
-    common: './src/js/common/common.js',
-    index: './src/js/pages/index.js',
+    common: ['babel-polyfill', './src/js/common/common.js'],
+    index: ['babel-polyfill', './src/js/pages/index.js'],
   },
   // 参考：https://webpack.js.org/configuration/output/
   // Reference：https://webpack.js.org/configuration/output/
