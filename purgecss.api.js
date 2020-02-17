@@ -1,24 +1,26 @@
-var Purgecss = require('purgecss')
+const { PurgeCSS } = require('purgecss')
 
-// 参考：https://www.purgecss.com/javascript-api/
-// Reference：https://www.purgecss.com/javascript-api/
-const purgecss = new Purgecss({
-  content: ['src/views/*.html', 'src/js/common/*.js', 'src/js/pages/*.js'],
-  css: ['src/css/common/common.css', 'src/css/pages/**/*.css'],
-  whitelist: [],
-  rejected: true,
-})
+async function runPurgeCSS() {
+  const purgeCSSResults = await new PurgeCSS().purge({
+    content: ['src/components/*.js', 'src/page/*.js'],
+    css: ['src/components/*.css', 'src/page/**/*.css'],
+    whitelist: ['html', 'body', 'root'],
+    whitelistPatterns: [/html$|body$|root$|btn|loading/],
+    whitelistPatternsChildren: [/html$|body$|root$|loading/],
+    keyframes: true,
+    rejected: true,
+  })
+  console.log('===== Start =====')
 
-const purgecssResult = purgecss.purge()
+  purgeCSSResults.map((p, index) => {
+    console.log(`unuse class path: ${p.file}`)
+    console.log(`unuse class: ${p.rejected != '' ? p.rejected : 'None'}`)
+    if (index != purgeCSSResults.length - 1) {
+      console.log('===== Next ======')
+    }
+  })
 
-console.log('===== Start =====')
+  console.log('===== End ======')
+}
 
-purgecssResult.map((p, index) => {
-  console.log('unuse class path : ' + p.file)
-  console.log('unuse class : ' + p.rejected)
-  if (index != purgecssResult.length - 1) {
-    console.log('===== Next ======')
-  }
-})
-
-console.log('===== End ======')
+runPurgeCSS()

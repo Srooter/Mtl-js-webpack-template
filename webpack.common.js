@@ -112,10 +112,9 @@ module.exports = {
     // Reference：https://github.com/FullHuman/purgecss-webpack-plugin/
     new PurgecssPlugin({
       paths: glob.sync(path.join(__dirname, 'src') + '/**/*', { nodir: true }),
-      purifyOptions: {
-        info: true,
-        minify: false,
-      },
+      whitelist: ['html', 'body'],
+      whitelistPatterns: ['html', 'body'],
+      whitelistPatternsChildren: ['html', 'body'],
     }),
     // 参考：https://webpack.js.org/plugins/mini-css-extract-plugin/
     // Reference：https://webpack.js.org/plugins/mini-css-extract-plugin/

@@ -41,7 +41,7 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 
 ## Usage
 
-1.`git clone git@github.com:ruanyf/react-demos.git` or download zip.
+1.`git clone https://github.com/Srooter/Mtl-js-webpack-template.git` or download zip.
 
 2.`npm install`
 
