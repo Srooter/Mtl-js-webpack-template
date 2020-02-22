@@ -1,5 +1,7 @@
 Mtl-js-webpack-template
 
+English|[中文](README-zh.md)
+
 A simple js webpack template，build a front-end js app with webpack.
 
 ![GitHub](https://img.shields.io/github/license/Srooter/Mtl-js-webpack-template)
@@ -41,11 +43,11 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 
 ## Usage
 
-1.`git clone https://github.com/Srooter/Mtl-js-webpack-template.git` or download zip.
+1. `git clone https://github.com/Srooter/Mtl-js-webpack-template.git` or download zip.
 
-2.`npm install`
+2. `npm install`
 
-3.`npm run start`
+3. `npm run start`
 
 ## Config 
 
@@ -62,7 +64,7 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 - Default: ``
 - Example：`http://www.xxx.com`                      
 
-## Command 
+## Npm Command 
 
 - `npm run clean`: Clean npm cache.
 
@@ -84,9 +86,9 @@ Modern browser,like Chrome,Firefox,Edge last 2 versions.
 
 - `npm run prettier-all`: Formatter all html,css,js files.
 
-> `npm run uncss` effect check src dir css files unused styles.
+> `npm run uncss` Check src dir css files uCnused styles.
 
-> `purgecss-webpack-plugin` effect clean src (include vendor) dir css files unused styles.
+> `purgecss-webpack-plugin` Clean src (include vendor) dir css files unused styles.
 
 ## Reference
 
