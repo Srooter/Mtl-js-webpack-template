@@ -1,6 +1,6 @@
 Mtl-js-webpack-template
 
-English|[中文](README-zh.md)
+English | [中文](README-zh.md)
 
 A simple js webpack template，build a front-end js app with webpack.
 

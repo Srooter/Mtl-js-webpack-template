@@ -1,6 +1,6 @@
 Mtl-js-webpack-template
 
-中文|[English](README.md)
+中文 | [English](README.md)
 
 一个简单的 JavaScript webpack 模板，用于创建一个基于 webpack 的 JavaScript 前端应用。
 
@@ -43,7 +43,7 @@ Mtl-js-webpack-template
 
 ## 使用
 
-1. `git clone https://github.com/Srooter/Mtl-js-webpack-template.git` or download zip.
+1. `git clone https://github.com/Srooter/Mtl-js-webpack-template.git` 或者下载zip。
 
 2. `npm install`
 
