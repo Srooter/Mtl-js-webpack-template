@@ -16,10 +16,12 @@ module.exports = merge(common, {
       // Reference：https://webpack.js.org/plugins/terser-webpack-plugin/
       new TerserJSPlugin({
         cache: true,
-        parallel: true,
         terserOptions: {
           output: {
             comments: false,
+          },
+          compress: {
+            drop_console: true,
           },
         },
         extractComments: false,
